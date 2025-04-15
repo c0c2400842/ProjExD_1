@@ -19,6 +19,7 @@ def main():
         
         x = tmr #練習6
         screen.blit(bg_img, [-x, 0]) #画面サーフェスに座標ヨコ-x(変数),タテ0で画像を張り付けてね
+        screen.blit(bg_img, [-x+1600, 0]) #練習7
         screen.blit(koukaton_img, [300, 200])  #練習4
         pg.display.update()
         tmr += 1        #タイマー変数
