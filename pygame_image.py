@@ -16,22 +16,38 @@ def main():
     koukaton_rct = koukaton_img.get_rect() #練習10-1こうかとん座標抽出
     koukaton_rct.center = (300,200) #練習10-2
     tmr = 0
+    horizontal=0
+    vertical=0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed()   #練習10-3
         if key_lst[pg.K_UP]:
             # koukaton_rct.move_ip((0, -1))#練習10-4
-            koukaton_rct.move_ip((-1, -1))#演習課題1
-        if key_lst[pg.K_DOWN]:
+            # koukaton_rct.move_ip((-1, -1))#演習課題1
+            horizontal=-1
+            vertical=-1
+        elif key_lst[pg.K_DOWN]:
             # koukaton_rct.move_ip((0, 1))#練習10-4
-            koukaton_rct.move_ip((-1, 1))#演習課題1
-        if key_lst[pg.K_RIGHT]:
-            koukaton_rct.move_ip((2, 0))#練習10-4
-        if key_lst[pg.K_LEFT]:
-            koukaton_rct.move_ip((-2, 0))#練習10-4
+            # koukaton_rct.move_ip((-1, 1))#演習課題1
+            horizontal=-1
+            vertical=1
+        elif key_lst[pg.K_RIGHT]:
+            # koukaton_rct.move_ip((2, 0))#練習10-4
+            horizontal=2
+            vertical=0
+        elif key_lst[pg.K_LEFT]:
+            # koukaton_rct.move_ip((-2, 0))#練習10-4
+            horizontal=-2
+            vertical=0
         else:
-            koukaton_rct.move_ip((-1, 0))
+            # koukaton_rct.move_ip((-1, 0))#演習課題1
+            horizontal=-1
+            vertical=0
+
+        koukaton_rct.move_ip ((horizontal, vertical))
+        # print (horizontal)
+        # print (vertical)
 
         x = tmr % 3200 #練習6,9 X座標はtmrを3200で割ったあまりになる。
         screen.blit(bg_img, [-x, 0]) #画面サーフェスに座標ヨコ-x(変数),タテ0で画像を張り付けてね
