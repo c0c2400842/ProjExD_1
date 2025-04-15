@@ -21,14 +21,17 @@ def main():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed()   #練習10-3
         if key_lst[pg.K_UP]:
-            koukaton_rct.move_ip((0, -1))#練習10-4
+            # koukaton_rct.move_ip((0, -1))#練習10-4
+            koukaton_rct.move_ip((-1, -1))#演習課題1
         if key_lst[pg.K_DOWN]:
-            koukaton_rct.move_ip((0, 1))#練習10-4
+            # koukaton_rct.move_ip((0, 1))#練習10-4
+            koukaton_rct.move_ip((-1, 1))#演習課題1
         if key_lst[pg.K_RIGHT]:
-            koukaton_rct.move_ip((1, 0))#練習10-4
+            koukaton_rct.move_ip((2, 0))#練習10-4
         if key_lst[pg.K_LEFT]:
-            koukaton_rct.move_ip((-1, 0))#練習10-4
-
+            koukaton_rct.move_ip((-2, 0))#練習10-4
+        else:
+            koukaton_rct.move_ip((-1, 0))
 
         x = tmr % 3200 #練習6,9 X座標はtmrを3200で割ったあまりになる。
         screen.blit(bg_img, [-x, 0]) #画面サーフェスに座標ヨコ-x(変数),タテ0で画像を張り付けてね
