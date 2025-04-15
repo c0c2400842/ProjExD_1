@@ -18,9 +18,10 @@ def main():
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         
-        x = tmr #練習6
+        x = tmr % 3200 #練習6,9 X座標はtmrを3200で割ったあまりになる。
         screen.blit(bg_img, [-x, 0]) #画面サーフェスに座標ヨコ-x(変数),タテ0で画像を張り付けてね
         screen.blit(bg_fliped_img, [-x+1600, 0]) #練習7
+        screen.blit(bg_img, [-x+3200,0])#練習9
         screen.blit(koukaton_img, [300, 200])  #練習4
         pg.display.update()
         tmr += 1        #タイマー変数
