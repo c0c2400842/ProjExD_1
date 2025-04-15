@@ -16,11 +16,12 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
-        screen.blit(bg_img, [0, 0]) #画面サーフェスに座標ヨコ0,タテ0で画像を張り付けてね
+        
+        x = tmr #練習6
+        screen.blit(bg_img, [-x, 0]) #画面サーフェスに座標ヨコ-x(変数),タテ0で画像を張り付けてね
         screen.blit(koukaton_img, [300, 200])  #練習4
         pg.display.update()
-        tmr += 1        
+        tmr += 1        #タイマー変数
         clock.tick(200)  #FPSの指定 練習5
 
 
